@@ -60,7 +60,8 @@ class Game:
         self.menu_buttons = [
             Button(WIDTH/2 - 100, HEIGHT/2 + 60, 200, 50, "Play vs CPU"),
             Button(WIDTH/2 - 100, HEIGHT/2 + 120, 200, 50, "Weapon Shop"),
-            Button(WIDTH/2 - 100, HEIGHT/2 + 180, 200, 50, "Quit")
+            Button(WIDTH/2 - 100, HEIGHT/2 + 180, 200, 50, "Change Username", font_size=24),
+            Button(WIDTH/2 - 100, HEIGHT/2 + 240, 200, 50, "Quit")
         ]
         
         self.shop_buttons = []
@@ -281,6 +282,9 @@ class Game:
                         elif btn.text == "Weapon Shop":
                             self.state = "SHOP"
                             self.update_shop_buttons()
+                        elif btn.text == "Change Username":
+                            self.state = "USERNAME"
+                            self.input_text = ""
                         elif btn.text == "Quit":
                             self.save_data()
                             self.running = False
